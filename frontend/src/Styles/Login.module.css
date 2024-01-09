@@ -1,0 +1,30 @@
+.main{
+    padding-top: 150px;
+}
+
+.form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.form > *{
+    margin: 10px 0px;
+    padding: 20px;
+}
+
+.form button{
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+}
+
+.form span{
+    font-weight: bold;
+    color: blue;
+}
+
+.form span:hover{
+    cursor: pointer;
+}

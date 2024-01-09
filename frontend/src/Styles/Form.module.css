@@ -1,0 +1,31 @@
+.main{
+    padding-top: 150px;
+}
+
+.main{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.main > input{
+    margin: 10px 0px;
+    padding: 20px;
+}
+
+.main button{
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    padding: 10px 0px;
+}
+
+.main p{
+    color: blue;
+    font-weight: bold;
+}
+
+.main p:hover{
+    cursor: pointer;
+}

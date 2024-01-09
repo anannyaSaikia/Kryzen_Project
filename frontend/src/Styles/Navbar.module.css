@@ -1,0 +1,22 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width : 100vw;
+    background-color: aqua;
+    padding: 20px;
+}
+
+.navbar h3:hover{
+    cursor: pointer;
+}
+
+.navbar button{
+    width: 100px;
+    height: 50px;
+    border:none;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-size: large;
+}
