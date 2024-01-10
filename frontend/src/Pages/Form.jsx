@@ -36,12 +36,11 @@ const Form = () => {
        
         axios.post("https://kryzen-project-backend.cyclic.app/form/add", formData, config)
             .then((res) => {
-                console.log(res.data)
+                //console.log(res.data)
                 navigate("/download")
             })
             .catch((err) => {
                 console.log(err)
-                alert(err.response.data.msg)
             })
         }
     }
