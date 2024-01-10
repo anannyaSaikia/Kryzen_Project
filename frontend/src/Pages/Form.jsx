@@ -47,17 +47,17 @@ const Form = () => {
 
     return (
         <div className={style.main}>
-            <input type="text" placeholder='Enter Name' value={details.name} onChange={(e) => {
+            <input type="text" placeholder='Enter Name' name="name" value={details.name} onChange={(e) => {
                 setDetails({
                     ...details, name: e.target.value
                 })
             }} />
-            <input type="text" placeholder='Enter Age' value={details.age} onChange={(e) => {
+            <input type="text" placeholder='Enter Age' name="age" value={details.age} onChange={(e) => {
                 setDetails({
                     ...details, age: e.target.value
                 })
             }} />
-            <input type="text" placeholder='Enter Address' value={details.address} onChange={(e) => {
+            <input type="text" placeholder='Enter Address' name="address" value={details.address} onChange={(e) => {
                 setDetails({
                     ...details, address: e.target.value
                 })

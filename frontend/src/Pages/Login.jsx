@@ -28,7 +28,6 @@ const Login = () => {
             })
             .catch((err) => {
                 console.log(err)
-                alert(err.response.data.msg)
             })
         }  
     }
@@ -60,8 +59,8 @@ const Login = () => {
                 signed ? (
                     <div className={style.form}>
                         <h2>Login Here</h2>
-                        <input type="text" placeholder='Enter Username' value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
-                        <input type="password" placeholder='Enter Password' value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
+                        <input type="text" placeholder='Enter Username' name="username" value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
+                        <input type="password" placeholder='Enter Password' name="password" value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
                         <button onClick={handleLogin}>Log In</button>
                         <p>Do not have an account? <span onClick={()=>{
                             setSigned(false)
@@ -70,8 +69,8 @@ const Login = () => {
                 ) : (
                     <div className={style.form}>
                         <h2>SignUp Here</h2>
-                        <input type="text" placeholder='Enter Username' value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
-                        < input type="password" placeholder='Enter Password' value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
+                        <input type="text" placeholder='Enter Username' name="username" value={user.username} onChange={(e) => setUser({ ...user, username: e.target.value })} />
+                        < input type="password" placeholder='Enter Password' name="password" value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
                         < button onClick={handleSignup}> Sign Up</button >
                         <p>Already have an account? <span onClick={()=>{
                             setSigned(true)
