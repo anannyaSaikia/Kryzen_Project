@@ -34,7 +34,7 @@ const Form = () => {
              }
           };
        
-        axios.post("http://localhost:8000/form/add", formData, config)
+        axios.post("https://kryzen-project-backend.cyclic.app/form/add", formData, config)
             .then((res) => {
                 console.log(res.data)
                 navigate("/download")

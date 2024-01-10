@@ -9,7 +9,7 @@ const Download = () => {
     const token = localStorage.getItem("token")
 
     const handleDownload = () =>{
-        axios.get("http://localhost:8000/form/download", {
+        axios.get("https://kryzen-project-backend.cyclic.app/form/download", {
             headers: {
                 "Authorization": `Bearer ${token}`
             },
@@ -26,7 +26,7 @@ const Download = () => {
     }
 
     const getData = () => {
-        axios.get("http://localhost:8000/form/data", {
+        axios.get("https://kryzen-project-backend.cyclic.app/form/data", {
             headers: {
                 "Authorization": `Bearer ${token}`,
             }
@@ -51,7 +51,7 @@ const Download = () => {
                 {
                     data?.map((ele, i) => {
                         return <div key={i}>
-                            <img src={`http://localhost:8000/uploads/${ele.image}`} alt="avatar" />
+                            <img src={`https://kryzen-project-backend.cyclic.app/uploads/${ele.image}`} alt="avatar" />
                             <p>Name : {ele.name}</p>
                             <p>Age : {ele.age}</p>
                             <p>Address : {ele.address}</p>
