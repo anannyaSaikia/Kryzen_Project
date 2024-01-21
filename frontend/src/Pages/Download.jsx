@@ -9,7 +9,7 @@ const Download = () => {
     const token = localStorage.getItem("token")
 
     const handleDownload = () => {
-        axios.get("https://kryzen-project-backend.cyclic.app/form/download", {
+        axios.get("http://localhost:8000/form/download", {
             headers: {
                 "Authorization": `Bearer ${token}`
             },
@@ -26,7 +26,7 @@ const Download = () => {
     }
 
     const getData = () => {
-        axios.get("https://kryzen-project-backend.cyclic.app/form/data", {
+        axios.get("http://localhost:8000/form/data", {
             headers: {
                 "Authorization": `Bearer ${token}`,
             }
@@ -48,22 +48,24 @@ const Download = () => {
         <div className={style.main}>
             <h3>Your Details</h3>
             <div>
-                {/* {
-                    data?.map((ele, i) => {
-                        return <div key={i}>
-                            <img src={`https://kryzen-project-backend.cyclic.app/uploads/${ele.image}`} alt="avatar" />
-                            <p>Name : {ele.name}</p>
-                            <p>Age : {ele.age}</p>
-                            <p>Address : {ele.address}</p>
-                        </div>
-                    })
-                } */}
                 {
                     data ? <div>
-                        <img src={`https://kryzen-project-backend.cyclic.app/uploads/${data.image}`} alt="avatar" />
+                        <img src={`http://localhost:8000/uploads/${data.image}`} alt="avatar" />
                         <p>Name : {data.name}</p>
                         <p>Age : {data.age}</p>
                         <p>Address : {data.address}</p>
+                        <table>
+                            <thead><tr><th>Numbers List</th></tr></thead>
+                            <tbody>
+                            {
+                                data.num_array?.map((ele, i)=>{
+                                    return <tr key={i}>
+                                             <td>{ele}</td>
+                                           </tr>
+                                })
+                            }
+                            </tbody>
+                        </table>
                     </div>
                         : <h4>No Data Found</h4>
                 }

@@ -16,7 +16,7 @@ const Login = () => {
         if(!user.username || !user.password){
             alert('Please enter all the fields')
         }else{
-            axios.post("https://kryzen-project-backend.cyclic.app/signup", user)
+            axios.post("http://localhost:8000/signup", user)
             .then((res) => {
                 console.log(res.data)
                 setSigned(true)
@@ -36,7 +36,7 @@ const Login = () => {
         if(!user.username || !user.password){
             alert('Please fill all the fields')
         }else{
-            axios.post("https://kryzen-project-backend.cyclic.app/login", user)
+            axios.post("http://localhost:8000/login", user)
         .then((res)=> {
             console.log(res.data)
             setUser({

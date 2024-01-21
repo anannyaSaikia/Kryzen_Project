@@ -7,7 +7,8 @@ const Form = () => {
     const [details, setDetails] = useState({
         name: "",
         age: "",
-        address: ""
+        address: "",
+        number : ""
     })
 
     const [image, setImage] = useState();
@@ -23,6 +24,7 @@ const Form = () => {
         formData.append('name', details.name)
         formData.append('age', details.age)
         formData.append('address', details.address)
+        formData.append('number', details.number)
         formData.append('image', image)
 
         const token = localStorage.getItem("token")
@@ -34,7 +36,7 @@ const Form = () => {
              }
           };
        
-        axios.post("https://kryzen-project-backend.cyclic.app/form/add", formData, config)
+        axios.post("http://localhost:8000/form/add", formData, config)
             .then((res) => {
                 //console.log(res.data)
                 navigate("/download")
@@ -66,6 +68,10 @@ const Form = () => {
             <input type="file" id="avatar" onChange={(e) => {
                 setImage(e.target.files[0])
             }} />
+            <input type="text" placeholder="Enter a number between 1 to 10" name="number" value={details.number}
+            onChange={(e)=>{
+                setDetails({...details, number: e.target.value})
+            }}/>
 
             <button onClick={handleSubmit}>Submit</button>
 
